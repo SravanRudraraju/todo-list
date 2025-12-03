@@ -1,6 +1,6 @@
 // select dom elements
 const input = document.getElementById('todo-input')
-const button = document.getElementById('add-btn')
+const addBtn = document.getElementById('add-btn')
 const list = document.getElementById('todo-list') 
 
 //try to load todos from localstorage 
@@ -24,6 +24,7 @@ function createTodoNode(todo,index){
         todo.completed = checkbox.checked
 
         //visual feedback : striked
+        textSpan.style.textDecoration = todo.completed ?'line-through': ""  
         savetodos();
     })
     //text of the todo 
@@ -32,7 +33,7 @@ function createTodoNode(todo,index){
     textSpan.style.margin = '0 px';
     if(todo.completed){
         textSpan.style.textDecoration = 'line-through'
-
+    }
         //Add doubleclick event listener to edit todo
         textSpan.addEventListener("dblclick",()=>{
             const newText = prompt("Edit todo",todo.text);
@@ -46,11 +47,15 @@ function createTodoNode(todo,index){
         const delBtn = document.createElement('button');
         delBtn.textContent = 'Delete';
         delBtn.addEventListener('click',()=>{
-            todo.splice(index,1);
+            todos.splice(index,1);
             render();
             savetodos();
         })
-    }
+        li.appendChild(checkbox);
+        li.appendChild(textSpan);
+        li.appendChild(delBtn);
+        return li
+    
 }
 
 //render the whole todo list from todos array
@@ -62,3 +67,17 @@ function render(){
 
     });
 }
+
+function addTodo(){
+    const text = input.value.trim();
+    if(!text){
+        return 
+    }
+    //push new todo object
+    todos.push({text,completed:false}) 
+    input.value='';
+    render()
+    savetodos()
+}
+addBtn.addEventListener('click',addTodo)
+render()
