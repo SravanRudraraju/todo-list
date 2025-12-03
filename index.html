@@ -3,14 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TODO List</title>
-
+    <title>3 TODO Lists</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   <h1>simple TODO list</h1>
-   <input type="text" id="todo-input" placeholder="enter a todo and press add">
-   <button id="add-btn">Add</button>
-   <ul id="todo-list"></ul>
-   <script src="script.js"></script>
+    <h1>Three TODO Lists</h1>
+
+    <div class="todo-container">
+        <!-- List A -->
+        <div class="todo-box" data-key="todosA">
+            <h2>List A</h2>
+            <input type="text" class="todo-input" placeholder="Add task...">
+            <button class="add-btn">Add</button>
+            <ul class="todo-list"></ul>
+        </div>
+
+        <!-- List B -->
+        <div class="todo-box" data-key="todosB">
+            <h2>List B</h2>
+            <input type="text" class="todo-input" placeholder="Add task...">
+            <button class="add-btn">Add</button>
+            <ul class="todo-list"></ul>
+        </div>
+
+        <!-- List C -->
+        <div class="todo-box" data-key="todosC">
+            <h2>List C</h2>
+            <input type="text" class="todo-input" placeholder="Add task...">
+            <button class="add-btn">Add</button>
+            <ul class="todo-list"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

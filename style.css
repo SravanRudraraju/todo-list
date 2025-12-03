@@ -1,0 +1,38 @@
+body {
+    font-family: Arial;
+    padding: 20px;
+}
+
+.todo-container {
+    display: flex;
+    gap: 20px;
+}
+
+.todo-box {
+    width: 32%;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+    background: #f7f7f7;
+}
+
+.todo-box input {
+    width: 70%;
+    padding: 6px;
+}
+
+.add-btn {
+    padding: 6px 10px;
+    margin-left: 4px;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 8px 0;
+}
+
+button {
+    cursor: pointer;
+}
